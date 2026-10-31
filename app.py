@@ -21,7 +21,7 @@ manage battery state-of-charge (SoC), and prevent power outages.
 @st.cache_data
 def generate_solar_data():
     np.random.seed(42)
-    hours = pd.date_range(start="2026-10-31 00:00:00", periods=24, freq="H")
+    hours = pd.date_range(start="2026-10-31 00:00:00", periods=24, freq="h")
     
     # Simulate solar generation (peaks at midday 12 PM, zero at night)
     solar_gen = [max(0, 1.5 * np.sin((h - 6) * np.pi / 12)) if 6 <= h <= 18 else 0 for h in hours.hour]
